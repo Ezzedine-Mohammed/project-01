@@ -1,0 +1,694 @@
+/* Start global rules */
+::selection {
+  color: white;
+  background-color: #363f46;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  margin: 0;
+  font-family: "Work Sans", sans-serif;
+  --titles-text-color: #10cab7;
+  --main-text-color: #2c4755;
+  color: var(--main-text-color, #2c4755);
+}
+
+.container {
+  padding-inline: 15px;
+  margin-inline: auto;
+  background-color: white;
+}
+
+.container > .title {
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e9e9e9;
+  font-weight: 800;
+  font-size: 5rem;
+}
+
+/* start section title rules */
+.title h2 {
+  font: inherit;
+  position: relative;
+}
+
+.title h2::before {
+  content: "Don't be busy, be productive";
+  color: var(--main-text-color, #363f46);
+  font-size: 1rem;
+  width: 100%;
+  text-align: center;
+  font-weight: normal;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, -15px);
+  -moz-transform: translate(-50%, -15px);
+  -ms-transform: translate(-50%, -15px);
+  -o-transform: translate(-50%, -15px);
+  -webkit-transform: translate(-50%, -15px);
+}
+/* start section title rules */
+
+/* small screens */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+  .container > .title {
+    font-size: 8rem;
+  }
+  .title h2::before {
+    font-size: 1.5rem;
+  }
+}
+/* medium screens */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* large screens */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* End gloabl rules */
+
+/* start header */
+header {
+  padding: 20px;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  width: 35px;
+}
+
+header .links {
+  position: relative;
+}
+
+header .links:has(i:focus) ul {
+  width: 269.88px;
+}
+
+header .links i {
+  cursor: pointer;
+  transition: 0.2s ease;
+  -webkit-transition: 0.2s ease;
+  -moz-transition: 0.2s ease;
+  -ms-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+}
+header .links i:focus {
+  outline: none;
+  color: var(--titles-text-color);
+}
+
+header .links ul {
+  list-style: none;
+  display: flex;
+  position: absolute;
+  gap: 10px;
+  right: 100%;
+  top: 50%;
+  transform: translate(-10px, -50%);
+  align-items: center;
+  overflow: hidden;
+  width: 0%;
+  transition: width 0.5s ease-in;
+  -webkit-transition: width 0.5s ease-in;
+  -moz-transition: width 0.5s ease-in;
+  -ms-transition: width 0.5s ease-in;
+  -o-transition: width 0.5s ease-in;
+}
+header .links ul li a {
+  text-decoration: none;
+  color: var(--main-text-color, #2c4755);
+}
+/* end header */
+
+/* start home */
+.home {
+  height: 458px;
+  background-image:
+    url("../images/home-page.png"), linear-gradient(to top, #363f46, white);
+  background-repeat: no-repeat;
+  background-position: center 50%;
+  background-size: cover;
+}
+
+.home .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 50px;
+  gap: 50px;
+  width: 384px;
+  background-color: transparent;
+}
+
+.home .container h2 {
+  color: var(--titles-color, #10cab7);
+  font-size: 35px;
+  font-weight: 800;
+}
+
+.home .container p {
+  font-size: 18px;
+}
+
+@media (max-width: 384px) {
+  .home .container {
+    width: 80%;
+  }
+  .container > .title {
+    font-size: 4.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .home .container {
+    width: 422px;
+    gap: 50px;
+  }
+  .home .container h2 {
+    font-size: 45px;
+  }
+  .home .container p {
+    font-size: 20px;
+  }
+}
+@media (min-width: 992px) {
+  .home .container h2 {
+    font-size: 50px;
+  }
+}
+@media (min-width: 1200px) {
+  .home .container {
+    gap: 35px;
+    width: 422px;
+  }
+  .home .container h2 {
+    font-size: 55px;
+  }
+}
+/* end home */
+
+/* start cards */
+.cards {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+}
+.card:hover {
+  box-shadow: 0px 0px 24px -20px black;
+}
+
+.card-content {
+  width: 300px;
+}
+
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+  }
+  .card-content {
+    width: 200px;
+  }
+}
+
+@media (min-width: 992px) {
+  .card-content {
+    width: 300px;
+  }
+}
+
+/* end cards */
+
+/* start stservices */
+.title h2::before {
+  content: "Don't be busy, be productive";
+}
+
+.services > .container > .content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 200px) 1fr;
+  gap: 20px;
+  z-index: 1;
+  position: relative;
+  padding-inline: 20px;
+}
+
+.services .content > div:not(:last-child) {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  gap: 20px;
+}
+
+.services .content > div:not(:last-child) > div {
+  display: flex;
+  flex-flow: column;
+  gap: 20px;
+}
+
+.peak-mountain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.peak-mountain::before {
+  content: "";
+  position: absolute;
+  width: 12%;
+  height: 100%;
+  background-color: #2c4755;
+  z-index: -1;
+  right: 0;
+  transform: scaleY(1.2) translateX(15px);
+  -webkit-transform: scaleY(1.2) translateX(15px);
+  -moz-transform: scaleY(1.2) translateX(15px);
+  -ms-transform: scaleY(1.2) translateX(15px);
+  -o-transform: scaleY(1.2) translateX(15px);
+}
+
+.peak-mountain img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .services > .container > .content {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 200px) 1fr;
+  }
+
+  .services .content > div .graphic-design {
+    grid-area: 1/1/2/2;
+  }
+
+  .web-design {
+    grid-area: 1/2/2/3;
+  }
+
+  .ui-ux {
+    grid-area: 2/1/3/2;
+  }
+
+  .web-development {
+    grid-area: 2/2/3/3;
+  }
+
+  .peak-mountain {
+    grid-area: 3/1/4/3;
+  }
+
+  .peak-mountain img {
+    width: 50%;
+    height: 100%;
+  }
+
+  .peak-mountain::before {
+    right: 24%;
+    transform: scaleY(1.2) translateX(15px);
+    -webkit-transform: scaleY(1.2) translateX(15px);
+    -moz-transform: scaleY(1.2) translateX(15px);
+    -ms-transform: scaleY(1.2) translateX(15px);
+    -o-transform: scaleY(1.2) translateX(15px);
+  }
+}
+
+@media (min-width: 992px) {
+  .peak-mountain img {
+    width: 40%;
+    height: 100%;
+  }
+
+  .peak-mountain::before {
+    right: 28%;
+    transform: scaleY(1.2) translateX(15px);
+    -webkit-transform: scaleY(1.2) translateX(15px);
+    -moz-transform: scaleY(1.2) translateX(15px);
+    -ms-transform: scaleY(1.2) translateX(15px);
+    -o-transform: scaleY(1.2) translateX(15px);
+  }
+}
+@media (min-width: 1200px) {
+  .services > .container > .content {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .services .content > div .graphic-design {
+    grid-area: 1/1/2/2;
+  }
+
+  .web-design {
+    grid-area: 1/2/2/3;
+  }
+
+  .ui-ux {
+    grid-area: 2/1/3/2;
+  }
+
+  .web-development {
+    grid-area: 2/2/3/3;
+  }
+
+  .peak-mountain {
+    grid-area: 1/3/3/4;
+  }
+
+  .peak-mountain img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .peak-mountain::before {
+    right: 0;
+    transform: scaleY(1.2) translateX(30px);
+    -webkit-transform: scaleY(1.2) translateX(30px);
+    -moz-transform: scaleY(1.2) translateX(30px);
+    -ms-transform: scaleY(1.2) translateX(30px);
+    -o-transform: scaleY(1.2) translateX(30px);
+  }
+}
+/* end services */
+
+/* start portfolio */
+.portfolio .title h2::before {
+  content: "If you do it right, it will last forever.";
+}
+
+.projects {
+  display: grid;
+  padding-inline: 20px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 3fr;
+  gap: 40px;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  background-color: #eee;
+}
+
+.project .img-container {
+  height: fit-content;
+}
+
+.project img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.project .description {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.description .title {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.portfolio .more {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.more button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  line-height: 50px;
+  width: 160px;
+  gap: 10px;
+  border-radius: 20px;
+  border: 1px solid var(--main-text-color, #363f46);
+  background-color: initial;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .project.three {
+    grid-area: 2/1/3/3;
+    width: 50%;
+    justify-self: center;
+  }
+}
+@media (min-width: 992px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 20px;
+  }
+  .project.three {
+    grid-area: span 1;
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+}
+
+/* end portfolio */
+
+/* start about */
+.about .title h2::before {
+  content: "Less is more work";
+}
+
+.about .description {
+  padding-inline: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 50px;
+}
+
+.description .img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.description .img-container img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.description .content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
+}
+
+.description .content p:first-child {
+  font-weight: 800;
+}
+.description .content p:last-child {
+  position: relative;
+}
+
+.description .content p:last-child::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  top: -20px;
+  left: 0;
+  background-color: var(--titles-text-color, #10cab7);
+}
+
+@media (min-width: 450px) {
+  .description .img-container {
+    height: 250px;
+  }
+  .description .img-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+@media (min-width: 768px) {
+  .about .description {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    gap: 100px;
+  }
+
+  .description .img-container {
+    height: unset;
+  }
+
+  .description .img-container::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 20%;
+    height: 80%;
+    top: -10%;
+    right: 0;
+    background-color: var(--titles-text-color, #10cab7);
+  }
+  .description .img-container::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 20%;
+    height: 20%;
+    right: -19%;
+    top: 50%;
+    background-color: var(--titles-text-color, #10cab7);
+  }
+
+  .description .img-container img {
+    object-fit: cover;
+    width: 80%;
+    height: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .description .img-container::before {
+    width: 14%;
+    height: 80%;
+    top: -10%;
+    right: 3%;
+  }
+  .description .img-container::after {
+    width: 18%;
+    height: 19%;
+    right: -15%;
+    top: 51%;
+  }
+}
+/* end about */
+
+/* start contact */
+.contact .title h2::before {
+  content: "We are born to create";
+}
+
+.contact .content {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+
+.contact .content > p {
+  font-weight: 800;
+}
+
+.contact .content > p:first-child {
+  font-size: 35px;
+}
+.contact .content p:nth-child(2) {
+  font-size: 25px;
+  color: var(--titles-text-color, #10cab7);
+  word-break: break-all;
+}
+
+.contact .content div {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 20px;
+}
+
+.contact .content img {
+  width: 20px;
+}
+
+@media (max-width: 600px) {
+  .contact .content > div {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .contact .content > div > div {
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .contact .content img {
+    width: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  .contact .content p:nth-child(2) {
+    padding-left: 30px;
+  }
+  .contact .content > div {
+    padding-left: 50px;
+  }
+}
+/* end contact */
+
+/* start footer */
+footer {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-text-color, #2c4755);
+  color: white;
+  font-weight: 800;
+  font-size: 15px;
+}
+footer span {
+  color: var(--titles-text-color, #10cab7);
+}
+/* end footer */
